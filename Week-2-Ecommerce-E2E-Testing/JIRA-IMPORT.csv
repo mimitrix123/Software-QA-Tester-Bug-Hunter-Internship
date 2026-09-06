@@ -1,0 +1,19 @@
+Summary,Issue Type,Priority,Severity,Status,Description,Linked Test
+Invalid login should display a clear authentication error,Bug,High,Medium,Open,Verify invalid credentials are rejected with clear feedback,E2E-002
+Locked account should clearly explain access restriction,Bug,High,Medium,Open,Verify locked account behavior and message,E2E-003
+Empty username/password submission should validate required fields,Bug,High,High,Open,Verify blank login fields are validated,E2E-003
+Product catalog should preserve correct product name/price pairing,Bug,High,High,Open,Verify catalog data consistency,E2E-004
+Product sorting A→Z should be deterministic,Bug,Medium,Medium,Open,Verify alphabetical sorting,E2E-005
+Price low→high sorting should place minimum price first,Bug,Medium,Medium,Open,Verify price sorting,E2E-006
+Product detail should match selected catalog product,Bug,High,High,Open,Verify selected product details,E2E-007
+Cart badge should update immediately after add/remove,Bug,High,High,Open,Verify cart count synchronization,E2E-008
+Removing an item should update cart contents consistently,Bug,High,High,Open,Verify remove behavior,E2E-010
+Empty-cart checkout should not permit invalid order submission,Bug,High,High,Open,Verify empty cart checkout handling,E2E-012
+Checkout required-field validation should identify missing data,Bug,High,High,Open,Verify checkout validation,E2E-013
+Checkout should retain selected products and quantities,Bug,High,High,Open,Verify checkout item integrity,E2E-014
+Checkout subtotal should equal sum of cart item prices,Bug,High,Critical,Open,Verify subtotal calculation,E2E-015
+Tax should be calculated from displayed subtotal according to app rules,Bug,High,High,Open,Verify tax calculation,E2E-015
+Checkout total should equal subtotal plus tax,Bug,High,Critical,Open,Verify final total calculation,E2E-015
+Successful checkout should display order confirmation,Bug,High,Critical,Open,Verify order completion confirmation,E2E-017
+Logout should invalidate access to protected application actions,Bug,High,Critical,Open,Verify logout/session invalidation,E2E-019
+Browser back after logout should not expose an actionable authenticated session,Bug,High,High,Open,Verify session protection,E2E-020
