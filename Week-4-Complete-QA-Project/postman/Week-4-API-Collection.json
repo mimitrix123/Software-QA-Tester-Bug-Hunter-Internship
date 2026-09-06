@@ -1,0 +1,11 @@
+{
+  "info":{"name":"Week 4 API QA Collection","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable":[{"key":"baseUrl","value":"https://jsonplaceholder.typicode.com"}],
+  "item":[
+    {"name":"GET posts","request":{"method":"GET","url":"{{baseUrl}}/posts"},"event":[{"listen":"test","script":{"exec":["pm.test('200 OK',()=>pm.response.to.have.status(200));","pm.test('Array response',()=>pm.expect(pm.response.json()).to.be.an('array')); "]}}]},
+    {"name":"GET post 1","request":{"method":"GET","url":"{{baseUrl}}/posts/1"},"event":[{"listen":"test","script":{"exec":["pm.test('200 OK',()=>pm.response.to.have.status(200));","pm.test('ID is 1',()=>pm.expect(pm.response.json().id).to.eql(1));"]}}]},
+    {"name":"POST post","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"QA test\",\"body\":\"Week 4\",\"userId\":1}"},"url":"{{baseUrl}}/posts"},"event":[{"listen":"test","script":{"exec":["pm.test('201 Created',()=>pm.response.to.have.status(201));","pm.test('Title returned',()=>pm.expect(pm.response.json().title).to.eql('QA test')); "]}}]},
+    {"name":"PUT post 1","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"id\":1,\"title\":\"Updated QA\",\"body\":\"Updated\",\"userId\":1}"},"url":"{{baseUrl}}/posts/1"},"event":[{"listen":"test","script":{"exec":["pm.test('200 OK',()=>pm.response.to.have.status(200));","pm.test('Updated title',()=>pm.expect(pm.response.json().title).to.eql('Updated QA')); "]}}]},
+    {"name":"DELETE post 1","request":{"method":"DELETE","url":"{{baseUrl}}/posts/1"},"event":[{"listen":"test","script":{"exec":["pm.test('200 OK',()=>pm.response.to.have.status(200));"]}}]}
+  ]
+}
